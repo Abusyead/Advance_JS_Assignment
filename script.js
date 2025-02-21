@@ -34,12 +34,12 @@ addBtn.addEventListener('click' , () =>{
 
         const editbtn = document.createElement('button');
         editbtn.innerText = 'Edit';
-        editbtn.classList.add("bg-blue-400" ,"px-4","py-1" ,"rounded" ,"mx-2")
+        editbtn.classList.add("bg-blue-600","cursor-pointer" ,"hover:bg-blue-500","text-white","px-4","py-1" ,"rounded" ,"mx-2")
         li.appendChild(editbtn);
 
         const deletebtn = document.createElement('button');
         deletebtn.innerText = 'remove';
-        deletebtn.classList.add("bg-blue-400" ,"px-4","py-1" ,"rounded")
+        deletebtn.classList.add("bg-blue-600","cursor-pointer" ,"hover:bg-blue-500","text-white","px-4","py-1" ,"rounded")
         li.appendChild(deletebtn);
 
         output.appendChild(li);
