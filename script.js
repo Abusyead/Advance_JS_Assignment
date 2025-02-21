@@ -10,7 +10,11 @@ addBtn.addEventListener('click' , () =>{
     }
 
     const li = document.createElement('li')
-    li.classList.add("list-none" ,"bg-white" ,"mt-3" , "p-2","rounded")
+    li.classList.add("list-none" ,"bg-white" ,"mt-3" , "p-2","rounded" ,"flex" ,"w-full" ,"justify-between") 
+
+    const div = document.createElement('div');
+        div.innerHTML ='<input id="checkbox" onclick="checkBtn(this)" type="Checkbox">'
+        li.appendChild(div)
 
     const p = document.createElement('p')
     p.innerHTML = inputText;
@@ -19,3 +23,17 @@ addBtn.addEventListener('click' , () =>{
     output.appendChild(li);
     textInput.value = ""
 })
+
+
+const checkBtn = (check) => {
+    const checkbox = document.getElementById('checkbox');
+    const text = check.parentNode.nextElementSibling; 
+    checkbox.type = 'checkbox';
+    if(checkbox.checked){
+        text.style.textDecoration = "line-through";
+    }
+    else{
+        text.style.textDecoration = 'none';
+    }
+    
+}
