@@ -17,22 +17,23 @@ addBtn.addEventListener('click' , () =>{
     }
     else{
         const li = document.createElement('li')
-        li.classList.add("list-none" ,"bg-white" ,"mt-3" , "p-2","rounded" ,"flex" ,"w-full" ,"justify-between" ,"items-center") 
+        li.classList.add("list-none" ,"bg-white" ,"mt-3" , "p-2","rounded" ,"flex" ,"w-full" ,"justify-between" ,"items-center")
 
         const div = document.createElement('div');
-            div.innerHTML ='<input id="checkbox" onclick="checkBtn(this)" type="Checkbox">'
+            div.innerHTML ='<input id="checkbox" onclick="checkBtn(this)" type="Checkbox">';
             li.appendChild(div)
 
         const p = document.createElement('p')
         p.innerHTML = inputText;
+        p.classList.add('flex-1' , "mx-3")
         li.appendChild(p);
 
         const editbtn = document.createElement('button');
         editbtn.innerText = 'Edit';
-        editbtn.classList.add("bg-blue-400" ,"px-4","py-1" ,"rounded")
+        editbtn.classList.add("bg-blue-400" ,"px-4","py-1" ,"rounded" ,"mx-2")
         li.appendChild(editbtn);
 
-        output.appendChild(li);
+
         textInput.value = ""
     }
 })
@@ -44,6 +45,8 @@ output.addEventListener('click' , (e) =>{
         addBtn.value = "Update";
         editTodo = e;
     }
+
+    
 })
 
 
@@ -51,6 +54,7 @@ output.addEventListener('click' , (e) =>{
 
 const checkBtn = (check) => {
     const checkbox = document.getElementById('checkbox');
+    checkbox.style.cursor = "pointer";
     const text = check.parentNode.nextElementSibling; 
     checkbox.type = 'checkbox';
     if(checkbox.checked){
