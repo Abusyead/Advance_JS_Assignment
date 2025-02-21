@@ -33,7 +33,12 @@ addBtn.addEventListener('click' , () =>{
         editbtn.classList.add("bg-blue-400" ,"px-4","py-1" ,"rounded" ,"mx-2")
         li.appendChild(editbtn);
 
+        const deletebtn = document.createElement('button');
+        deletebtn.innerText = 'remove';
+        deletebtn.classList.add("bg-blue-400" ,"px-4","py-1" ,"rounded")
+        li.appendChild(deletebtn);
 
+        output.appendChild(li);
         textInput.value = ""
     }
 })
@@ -45,7 +50,10 @@ output.addEventListener('click' , (e) =>{
         addBtn.value = "Update";
         editTodo = e;
     }
-
+    if(e.target.innerHTML === "remove"){
+        output.removeChild(e.target.parentElement);
+        
+    };
     
 })
 
