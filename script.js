@@ -2,6 +2,8 @@ const textInput = document.getElementById('text-Input');
 const addBtn = document.getElementById('addBtn');
 const output = document.getElementById('output');
 
+const allClear = document.getElementById('allClear')
+
 let editTodo = null;
 
 addBtn.addEventListener('click' , () =>{
@@ -73,3 +75,8 @@ const checkBtn = (check) => {
     }
     
 }
+
+allClear.addEventListener('click' , () => {
+    while (output.firstChild) {
+        output.removeChild(output.firstChild);}
+})
