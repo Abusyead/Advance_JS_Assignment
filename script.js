@@ -2,7 +2,9 @@ const textInput = document.getElementById('text-Input');
 const addBtn = document.getElementById('addBtn');
 const output = document.getElementById('output');
 
-const allClear = document.getElementById('allClear')
+const allClear = document.getElementById('allClear');
+
+const checkedDelete = document.getElementById('checkedDelete')
 
 let editTodo = null;
 
@@ -79,4 +81,17 @@ const checkBtn = (check) => {
 allClear.addEventListener('click' , () => {
     while (output.firstChild) {
         output.removeChild(output.firstChild);}
+});
+
+checkedDelete.addEventListener('click' ,()=>{
+    const checkbox = document.querySelectorAll("input[type='checkbox']:checked")
+
+    checkbox.forEach((checkbox =>{
+        const div =checkbox.parentNode;
+        const li = div.parentNode;
+        
+        li.parentNode.removeChild(li)
+        
+    }))
 })
+ 
